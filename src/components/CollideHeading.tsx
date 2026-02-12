@@ -115,7 +115,7 @@ export function CollideHeading() {
   return (
     <div
       ref={containerRef}
-      className="relative mb-4 inline-flex items-baseline justify-center gap-[0.3em] text-2xl font-bold tracking-tight text-ctp-text sm:mb-6 sm:text-3xl"
+      className="relative mb-4 inline-flex items-baseline justify-center gap-[0.3em] font-mono text-3xl font-bold tracking-normal text-ctp-text sm:mb-6 sm:text-4xl md:text-5xl"
     >
       <span
         ref={leftRef}

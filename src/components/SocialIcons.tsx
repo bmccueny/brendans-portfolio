@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 interface SocialLink {
   label: string;
   href: string;
@@ -53,9 +57,30 @@ const socials: SocialLink[] = [
 ];
 
 export function SocialIcons() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          setRevealed(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5">
-      {socials.map(({ label, href, icon }) => (
+    <div ref={containerRef} className="flex flex-wrap items-center justify-center gap-4 sm:gap-5">
+      {socials.map(({ label, href, icon }, i) => (
         <a
           key={label}
           href={href}
@@ -63,11 +88,16 @@ export function SocialIcons() {
           rel="noopener noreferrer"
           aria-label={label}
           className="group flex items-center gap-2 rounded-xl border border-ctp-surface0 bg-ctp-mantle px-4 py-3 text-ctp-subtext0 transition-all duration-200 hover:border-ctp-mauve/50 hover:bg-ctp-surface0 hover:text-ctp-mauve hover:shadow-[0_0_16px_rgba(203,166,247,0.15)] active:scale-95"
+          style={{
+            opacity: revealed ? 1 : 0,
+            transform: revealed ? "translateY(0)" : "translateY(20px)",
+            transition: `opacity 0.4s ease-out ${i * 100}ms, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${i * 100}ms, border-color 0.2s, background-color 0.2s, color 0.2s, box-shadow 0.2s`,
+          }}
         >
           <span className="transition-transform duration-200 group-hover:scale-110">
             {icon}
           </span>
-          <span className="text-sm font-medium">{label}</span>
+          <span className="font-mono text-sm font-medium">{label}</span>
         </a>
       ))}
     </div>
