@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 interface Tool {
   label: string;
   color: string;
@@ -80,17 +84,52 @@ const tools: Tool[] = [
 ];
 
 export function ToolkitIcons() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [revealed, setRevealed] = useState<number[]>([]);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          tools.forEach((_, i) => {
+            setTimeout(() => {
+              setRevealed((prev) => [...prev, i]);
+            }, i * 120);
+          });
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="mt-8 flex flex-wrap items-center justify-center gap-5 sm:mt-10 sm:gap-8">
-      {tools.map(({ label, color, icon }) => (
+    <div
+      ref={containerRef}
+      className="mt-8 flex flex-wrap items-center justify-center gap-5 sm:mt-10 sm:gap-8"
+    >
+      {tools.map(({ label, color, icon }, i) => (
         <div
           key={label}
-          className={`group flex flex-col items-center gap-2 ${color} transition-transform duration-200 hover:scale-110`}
+          className={`group flex flex-col items-center gap-2 ${color} hover:scale-110`}
+          style={{
+            opacity: revealed.includes(i) ? 1 : 0,
+            transform: revealed.includes(i)
+              ? "scale(1) translateY(0)"
+              : "scale(0.3) translateY(20px)",
+            transition: "opacity 0.4s ease-out, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
+          }}
         >
-          <span className="opacity-80 transition-opacity group-hover:opacity-100">
+          <span style={{ opacity: 0.8 }}>
             {icon}
           </span>
-          <span className="text-xs font-medium text-ctp-overlay1 transition-colors group-hover:text-ctp-subtext1">
+          <span className="text-xs font-medium text-ctp-overlay1">
             {label}
           </span>
         </div>

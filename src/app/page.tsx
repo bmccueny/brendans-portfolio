@@ -2,6 +2,9 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { MobileNav } from "@/components/MobileNav";
 import { SocialIcons } from "@/components/SocialIcons";
 import { ToolkitIcons } from "@/components/ToolkitIcons";
+import { Typewriter } from "@/components/Typewriter";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
+import { PulsingDot } from "@/components/PulsingDot";
 
 const projects = [
   {
@@ -64,19 +67,55 @@ export default function Home() {
 
       <div id="page-content" className="min-h-screen bg-ctp-base text-ctp-text">
         {/* Hero */}
-        <section className="grid min-h-[60vh] place-items-center px-4 sm:px-6">
+        <section className="relative grid min-h-dvh place-items-center px-4 sm:px-6">
           <div className="max-w-3xl text-center">
-            <p className="mb-3 text-xs font-medium uppercase tracking-widest text-ctp-mauve sm:text-sm">
-              Portfolio
-            </p>
+            {/* Status badge */}
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-ctp-surface0 bg-ctp-mantle px-4 py-1.5">
+              <PulsingDot />
+              <span className="text-xs font-medium text-ctp-subtext0">
+                Available for work
+              </span>
+            </div>
+
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-ctp-text sm:text-5xl md:text-6xl">
-              Hey, I&apos;m <span className="text-ctp-lavender">Brendan</span>.
+              <Typewriter />
             </h1>
+
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-ctp-subtext0 sm:mt-5 sm:text-lg">
               I build modern web experiences with a focus on performance,
               accessibility, and clean code. Welcome to my corner of the internet.
             </p>
+
+            {/* Tech pills */}
+            <div className="mx-auto mt-6 flex flex-wrap justify-center gap-2 sm:mt-8">
+              {["React", "Next.js", "TypeScript", "GraphQL", "Tailwind CSS"].map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border border-ctp-surface1 px-3 py-1 text-xs font-medium text-ctp-subtext1"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            {/* CTA buttons */}
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+              <a
+                href="#projects"
+                className="inline-flex w-full items-center justify-center rounded-lg bg-ctp-mauve px-6 py-3 text-sm font-semibold text-ctp-crust transition-colors hover:bg-ctp-lavender active:bg-ctp-blue sm:w-auto"
+              >
+                View Projects
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex w-full items-center justify-center rounded-lg border border-ctp-surface1 px-6 py-3 text-sm font-semibold text-ctp-subtext1 transition-colors hover:border-ctp-mauve hover:text-ctp-mauve sm:w-auto"
+              >
+                Get in Touch
+              </a>
+            </div>
           </div>
+
+          <ScrollIndicator />
         </section>
 
         {/* About */}
