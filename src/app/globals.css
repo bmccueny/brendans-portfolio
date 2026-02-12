@@ -103,6 +103,7 @@ body {
 
 #page-content {
   transition: filter 0.3s ease;
+  scroll-behavior: smooth;
 }
 
 body.mobile-menu-open #page-content {
