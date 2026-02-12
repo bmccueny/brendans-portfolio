@@ -5,6 +5,9 @@ import { ToolkitIcons } from "@/components/ToolkitIcons";
 import { Typewriter } from "@/components/Typewriter";
 import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { PulsingDot } from "@/components/PulsingDot";
+import { GlitchText } from "@/components/GlitchText";
+import { CollideHeading } from "@/components/CollideHeading";
+import { ScrollSnap } from "@/components/ScrollSnap";
 
 const projects = [
   {
@@ -31,7 +34,7 @@ export default function Home() {
   return (
     <>
       {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-ctp-surface0 bg-ctp-crust/80 backdrop-blur-md">
+      <header className="fixed top-0 left-0 right-0 z-40 border-b border-ctp-surface0 bg-ctp-crust/80 backdrop-blur-md">
         <nav className="mx-auto grid max-w-5xl grid-cols-[1fr_auto] items-center px-4 py-4 sm:px-6">
           <span className="text-lg font-bold tracking-tight text-ctp-mauve">
             Brendan
@@ -65,9 +68,10 @@ export default function Home() {
         </nav>
       </header>
 
-      <div id="page-content" className="min-h-screen bg-ctp-base text-ctp-text">
+      <div id="page-content" className="min-h-screen snap-y snap-mandatory overflow-y-auto bg-ctp-base text-ctp-text" style={{ height: "100dvh" }}>
+        <ScrollSnap />
         {/* Hero */}
-        <section className="relative grid min-h-dvh place-items-center px-4 sm:px-6">
+        <section className="relative grid min-h-dvh snap-center place-items-center px-4 sm:px-6">
           <div className="max-w-3xl text-center">
             {/* Status badge */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-ctp-surface0 bg-ctp-mantle px-4 py-1.5">
@@ -119,8 +123,8 @@ export default function Home() {
         </section>
 
         {/* About */}
-        <section id="about" className="border-t border-ctp-surface0">
-          <div className="grid place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
+        <section id="about" className="snap-center border-t border-ctp-surface0">
+          <div className="grid min-h-dvh place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
             <div className="max-w-3xl text-center">
               <h2 className="mb-4 text-2xl font-bold tracking-tight text-ctp-text sm:mb-6 sm:text-3xl">
                 About <span className="text-ctp-blue">Me</span>
@@ -138,8 +142,8 @@ export default function Home() {
         </section>
 
         {/* Projects */}
-        <section id="projects" className="border-t border-ctp-surface0">
-          <div className="grid place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
+        <section id="projects" className="snap-center border-t border-ctp-surface0">
+          <div className="grid min-h-dvh place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
             <div className="w-full max-w-5xl">
               <h2 className="mb-8 text-center text-2xl font-bold tracking-tight text-ctp-text sm:mb-10 sm:text-3xl">
                 Projects
@@ -154,11 +158,11 @@ export default function Home() {
         </section>
 
         {/* Socials */}
-        <section id="socials" className="border-t border-ctp-surface0">
-          <div className="grid place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
+        <section id="socials" className="snap-center border-t border-ctp-surface0">
+          <div className="grid min-h-dvh place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
             <div className="w-full max-w-3xl text-center">
               <h2 className="mb-8 text-2xl font-bold tracking-tight text-ctp-text sm:mb-10 sm:text-3xl">
-                Find Me <span className="text-ctp-pink">Online</span>
+                Find Me <GlitchText text="Online" className="text-ctp-pink" />
               </h2>
               <SocialIcons />
             </div>
@@ -166,12 +170,10 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="border-t border-ctp-surface0">
-          <div className="grid place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
+        <section id="contact" className="snap-center border-t border-ctp-surface0">
+          <div className="grid min-h-dvh place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
             <div className="max-w-xl text-center">
-              <h2 className="mb-4 text-2xl font-bold tracking-tight text-ctp-text sm:mb-6 sm:text-3xl">
-                Get in <span className="text-ctp-green">Touch</span>
-              </h2>
+              <CollideHeading />
               <p className="mb-6 text-sm text-ctp-subtext0 sm:mb-8 sm:text-base">
                 Interested in working together or just want to say hello? Drop me a
                 line.
@@ -182,18 +184,12 @@ export default function Home() {
               >
                 Say Hello
               </a>
+              <p className="mt-12 text-xs text-ctp-overlay0 sm:text-sm">
+                &copy; {new Date().getFullYear()} Brendan. All rights reserved.
+              </p>
             </div>
           </div>
         </section>
-
-        {/* Footer */}
-        <footer className="border-t border-ctp-surface0">
-          <div className="grid place-items-center px-4 py-6 sm:px-6 sm:py-8">
-            <p className="text-xs text-ctp-overlay0 sm:text-sm">
-              &copy; {new Date().getFullYear()} Brendan. All rights reserved.
-            </p>
-          </div>
-        </footer>
       </div>
     </>
   );
