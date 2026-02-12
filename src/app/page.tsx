@@ -37,7 +37,7 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-40 border-b border-ctp-surface0 bg-ctp-crust/80 backdrop-blur-md">
         <nav className="mx-auto grid max-w-5xl grid-cols-[1fr_auto] items-center px-4 py-4 sm:px-6">
           <span className="text-lg font-bold tracking-tight text-ctp-mauve">
-            Brendan
+            Brendan McCue
           </span>
 
           {/* Desktop nav */}
@@ -185,7 +185,7 @@ export default function Home() {
                 Say Hello
               </a>
               <p className="mt-12 text-xs text-ctp-overlay0 sm:text-sm">
-                &copy; {new Date().getFullYear()} Brendan. All rights reserved.
+                &copy; {new Date().getFullYear()} Brendan McCue. All rights reserved.
               </p>
             </div>
           </div>
