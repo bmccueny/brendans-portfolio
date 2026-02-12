@@ -9,16 +9,18 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 const projects = [
   {
-    title: "Project One",
+    title: "Ember & Brew",
     description:
-      "Placeholder — replace with a real project. Describe the client, the problem you solved, and the result.",
-    href: "#",
+      "A polished coffee shop website built with Next.js, TypeScript, and Tailwind CSS. Features a warm, modern-rustic design with scroll-triggered animations, responsive mobile nav, and a full categorized menu page.",
+    href: "https://ember-and-brew.vercel.app",
+    image: "/projects/ember-and-brew.png",
   },
   {
-    title: "Project Two",
+    title: "Velvet Edge",
     description:
-      "Placeholder — replace with a real project. What did you build? Who was it for? What changed for them?",
-    href: "#",
+      "A bold, dark-themed hair salon website for a trendy Hudson, NY salon. Built with Next.js, TypeScript, and Tailwind CSS. Features a violet/pink neon palette, full services & pricing page, and scroll-triggered animations.",
+    href: "https://velvet-edge.vercel.app",
+    image: "/projects/velvet-edge.png",
   },
   {
     title: "Project Three",
@@ -34,7 +36,7 @@ export default function Home() {
       <Header />
       <ScrollProgress />
 
-      <div id="page-content" className="min-h-screen snap-y snap-mandatory overflow-y-auto bg-ctp-base text-ctp-text" style={{ height: "100dvh" }}>
+      <div id="page-content" className="min-h-screen snap-y snap-proximity overflow-y-auto bg-ctp-base text-ctp-text" style={{ height: "100dvh" }}>
         {/* Hero */}
         <HeroSection />
 
