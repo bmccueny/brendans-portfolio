@@ -23,10 +23,11 @@ const projects = [
     image: "/projects/velvet-edge.png",
   },
   {
-    title: "Project Three",
+    title: "Green Ridge Landscaping",
     description:
-      "Placeholder — replace with a real project. Show outcomes, not tech specs.",
-    href: "#",
+      "A clean, light-themed landscaping company website for the Hudson Valley. Built with Next.js, TypeScript, and Tailwind CSS. Features a green/earth palette, project gallery, service categories, and a free estimate contact form.",
+    href: "https://green-ridge.vercel.app",
+    image: "/projects/green-ridge.png",
   },
 ];
 
