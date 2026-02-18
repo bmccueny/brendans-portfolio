@@ -1,45 +1,41 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Typewriter } from "@/components/Typewriter";
 import { PulsingDot } from "@/components/PulsingDot";
 import { MagneticButton } from "@/components/MagneticButton";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 
-type RevealStage = "idle" | "typewriter" | "body" | "ctas" | "badge";
-
-const TYPEWRITER_DURATION = 1800; // ~100ms * 17 chars + buffer
+type RevealStage = "idle" | "badge" | "heading" | "body" | "ctas";
 
 export function HeroSection() {
   const [stage, setStage] = useState<RevealStage>("idle");
 
   useEffect(() => {
-    // Start typewriter immediately
-    setStage("typewriter");
-
     const timers = [
-      setTimeout(() => setStage("body"), TYPEWRITER_DURATION),
-      setTimeout(() => setStage("ctas"), TYPEWRITER_DURATION + 400),
-      setTimeout(() => setStage("badge"), TYPEWRITER_DURATION + 800),
+      setTimeout(() => setStage("badge"),   100),
+      setTimeout(() => setStage("heading"), 450),
+      setTimeout(() => setStage("body"),    800),
+      setTimeout(() => setStage("ctas"),    1100),
     ];
-
     return () => timers.forEach(clearTimeout);
   }, []);
 
   const past = (target: RevealStage) => {
-    const order: RevealStage[] = ["idle", "typewriter", "body", "ctas", "badge"];
+    const order: RevealStage[] = ["idle", "badge", "heading", "body", "ctas"];
     return order.indexOf(stage) >= order.indexOf(target);
   };
 
   return (
     <section id="hero" className="relative grid min-h-dvh place-items-center px-4 sm:px-6">
       <div className="max-w-3xl text-center">
-        {/* Status badge */}
+
+        {/* Status badge — first to appear */}
         <div
           className="glass-card mb-6 inline-flex items-center gap-2 rounded-full border border-ctp-surface0 px-4 py-1.5"
           style={{
             opacity: past("badge") ? 1 : 0,
-            transform: past("badge") ? "translateY(0)" : "translateY(-12px)",
-            transition: "opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
+            transform: past("badge") ? "translateY(0)" : "translateY(-10px)",
+            transition: "opacity 0.45s ease-out, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)",
           }}
         >
           <PulsingDot />
@@ -48,10 +44,34 @@ export function HeroSection() {
           </span>
         </div>
 
-        <h1 className="font-mono text-4xl font-extrabold leading-tight tracking-normal text-ctp-text sm:text-5xl md:text-6xl">
-          <Typewriter />
+        {/* Eyebrow */}
+        <p
+          className="mb-3 font-mono text-base font-medium sm:text-lg"
+          style={{
+            opacity: past("heading") ? 1 : 0,
+            transform: past("heading") ? "translateY(0)" : "translateY(10px)",
+            transition: "opacity 0.5s ease-out, transform 0.5s ease-out",
+            color: "var(--ctp-mauve)",
+          }}
+        >
+          Hey, I&apos;m{" "}
+          <span style={{ color: "var(--ctp-lavender)" }}>Brendan.</span>
+        </p>
+
+        {/* Main headline */}
+        <h1
+          className="font-mono text-4xl font-extrabold leading-tight tracking-normal text-ctp-text sm:text-5xl md:text-6xl"
+          style={{
+            opacity: past("heading") ? 1 : 0,
+            transform: past("heading") ? "translateY(0)" : "translateY(18px)",
+            transition: "opacity 0.6s ease-out 0.07s, transform 0.6s ease-out 0.07s",
+          }}
+        >
+          I Build Websites{" "}
+          <span style={{ color: "var(--ctp-mauve)" }}>That Work.</span>
         </h1>
 
+        {/* Body */}
         <p
           className="mx-auto mt-4 max-w-prose text-base font-light leading-loose text-ctp-subtext0 sm:mt-5 sm:text-lg"
           style={{
@@ -77,7 +97,7 @@ export function HeroSection() {
         >
           <MagneticButton
             href="#projects"
-            className="inline-flex w-full items-center justify-center rounded-lg bg-ctp-mauve px-6 py-3 font-mono text-base font-semibold tracking-wide text-ctp-crust transition-colors hover:bg-ctp-lavender hover:shadow-[0_0_20px_rgba(191,90,242,0.45)] active:bg-ctp-blue sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-lg bg-ctp-mauve px-6 py-3 font-mono text-base font-semibold tracking-wide text-white transition-colors hover:bg-ctp-lavender hover:shadow-[0_0_20px_rgba(191,90,242,0.45)] active:bg-ctp-blue sm:w-auto"
           >
             View Projects
           </MagneticButton>
@@ -88,7 +108,9 @@ export function HeroSection() {
             Get in Touch
           </MagneticButton>
         </div>
+
       </div>
+      <ScrollIndicator />
     </section>
   );
 }

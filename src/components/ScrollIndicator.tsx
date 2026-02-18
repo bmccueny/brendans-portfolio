@@ -7,7 +7,7 @@ export function ScrollIndicator() {
   const arrowRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY < 50);
+    const onScroll = () => setShow(window.scrollY < 80);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -26,13 +26,12 @@ export function ScrollIndicator() {
     return () => anim.cancel();
   }, []);
 
-  if (!show) return null;
-
   return (
     <a
       href="#about"
       aria-label="Scroll down"
-      className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      className="absolute bottom-8 left-1/2 -translate-x-1/2 transition-opacity duration-500"
+      style={{ opacity: show ? 1 : 0, pointerEvents: show ? "auto" : "none" }}
     >
       <svg
         ref={arrowRef}

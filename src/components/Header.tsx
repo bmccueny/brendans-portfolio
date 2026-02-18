@@ -3,20 +3,15 @@
 import { useEffect, useState } from "react";
 import { MobileNav } from "@/components/MobileNav";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Logo } from "@/components/Logo";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const container = document.getElementById("page-content");
-    if (!container) return;
-
-    const handleScroll = () => {
-      setScrolled(container.scrollTop > 100);
-    };
-
-    container.addEventListener("scroll", handleScroll, { passive: true });
-    return () => container.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 100);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -28,9 +23,9 @@ export function Header() {
       }`}
     >
       <nav className="mx-auto grid max-w-5xl grid-cols-[1fr_auto] items-center px-4 py-4 sm:px-6">
-        <span className="font-mono text-lg font-bold tracking-tight text-ctp-mauve">
-          Brendan McCue
-        </span>
+        <a href="#hero" aria-label="McCue Studio — home">
+          <Logo />
+        </a>
 
         <div className="flex items-center gap-4">
           {/* Desktop nav */}

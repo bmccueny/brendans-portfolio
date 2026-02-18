@@ -9,9 +9,10 @@ interface ProjectCardProps {
   href: string;
   index: number;
   image?: string;
+  outcome?: string;
 }
 
-export function ProjectCard({ title, description, href, index, image }: ProjectCardProps) {
+export function ProjectCard({ title, description, href, index, image, outcome }: ProjectCardProps) {
   const cardRef = useRef<HTMLAnchorElement>(null);
   const [revealed, setRevealed] = useState(false);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
@@ -90,6 +91,11 @@ export function ProjectCard({ title, description, href, index, image }: ProjectC
         <p className="flex-1 text-sm leading-relaxed text-ctp-subtext0 sm:text-base">
           {description}
         </p>
+        {outcome && (
+          <p className="mt-3 border-t border-ctp-surface0 pt-3 text-xs font-medium text-ctp-green">
+            → {outcome}
+          </p>
+        )}
       </div>
     </a>
   );

@@ -131,11 +131,32 @@ body {
     #F2F2F7;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Make page-content transparent so body orbs show through the glass panels */
 #page-content {
   background: transparent;
   transition: filter 0.3s ease;
-  scroll-behavior: smooth;
+}
+
+/* Select dropdown — needs solid bg so native option list is readable */
+.form-select {
+  background-color: #111111;
+  color: var(--ctp-text);
+}
+[data-theme="light"] .form-select {
+  background-color: #ffffff;
+  color: var(--ctp-text);
+}
+.form-select option {
+  background-color: #111111;
+  color: #f2f2f7;
+}
+[data-theme="light"] .form-select option {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 body.mobile-menu-open #page-content {

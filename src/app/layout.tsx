@@ -7,13 +7,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Brendan McCue – Full-Stack Developer",
+  title: "McCue Studio – Web Development for Small Businesses",
   description:
-    "Full-stack developer specializing in React, Next.js, and TypeScript. Building fast, accessible, production-grade web apps.",
+    "McCue Studio builds fast, professional websites for small businesses. Plain English, honest pricing, and work that actually helps you win clients.",
   openGraph: {
-    title: "Brendan McCue – Full-Stack Developer",
+    title: "McCue Studio – Web Development for Small Businesses",
     description:
-      "Full-stack developer specializing in React, Next.js, and TypeScript. Building fast, accessible, production-grade web apps.",
+      "McCue Studio builds fast, professional websites for small businesses. Plain English, honest pricing, and work that actually helps you win clients.",
     type: "website",
   },
 };
