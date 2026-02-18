@@ -2,106 +2,138 @@
 @import "@fontsource-variable/jetbrains-mono";
 @import "@fontsource-variable/inter";
 
-/* Catppuccin Mocha palette (dark — default) */
+/* iOS System palette — dark mode */
 :root,
 [data-theme="dark"] {
-  --ctp-rosewater: #f5e0dc;
-  --ctp-flamingo: #f2cdcd;
-  --ctp-pink: #f5c2e7;
-  --ctp-mauve: #cba6f7;
-  --ctp-red: #f38ba8;
-  --ctp-maroon: #eba0ac;
-  --ctp-peach: #fab387;
-  --ctp-yellow: #f9e2af;
-  --ctp-green: #a6e3a1;
-  --ctp-teal: #94e2d5;
-  --ctp-sky: #89dceb;
-  --ctp-sapphire: #74c7ec;
-  --ctp-blue: #89b4fa;
-  --ctp-lavender: #b4befe;
-  --ctp-text: #cdd6f4;
-  --ctp-subtext1: #bac2de;
-  --ctp-subtext0: #a6adc8;
-  --ctp-overlay2: #9399b2;
-  --ctp-overlay1: #7f849c;
-  --ctp-overlay0: #6c7086;
-  --ctp-surface2: #585b70;
-  --ctp-surface1: #45475a;
-  --ctp-surface0: #313244;
-  --ctp-base: #1e1e2e;
-  --ctp-mantle: #181825;
-  --ctp-crust: #11111b;
+  /* Accent / brand */
+  --ctp-rosewater: #FF375F;
+  --ctp-flamingo:  #FF6B6B;
+  --ctp-pink:      #FF375F;
+  --ctp-mauve:     #BF5AF2;   /* iOS Purple  — primary accent  */
+  --ctp-red:       #FF453A;   /* iOS Red                       */
+  --ctp-maroon:    #FF6961;
+  --ctp-peach:     #FF9F0A;   /* iOS Orange                    */
+  --ctp-yellow:    #FFD60A;   /* iOS Yellow                    */
+  --ctp-green:     #30D158;   /* iOS Green                     */
+  --ctp-teal:      #5AC8FA;   /* iOS Teal / Sky                */
+  --ctp-sky:       #5AC8FA;
+  --ctp-sapphire:  #32ADE6;
+  --ctp-blue:      #0A84FF;   /* iOS Blue                      */
+  --ctp-lavender:  #5E5CE6;   /* iOS Indigo — hover accent     */
+
+  /* Labels */
+  --ctp-text:     #F2F2F7;
+  --ctp-subtext1: rgba(235, 235, 245, 0.85);
+  --ctp-subtext0: rgba(235, 235, 245, 0.55);
+  --ctp-overlay2: rgba(235, 235, 245, 0.65);
+  --ctp-overlay1: rgba(235, 235, 245, 0.45);
+  --ctp-overlay0: rgba(235, 235, 245, 0.25);
+
+  /* Glass fills / borders */
+  --ctp-surface2: rgba(255, 255, 255, 0.22);  /* border — hover    */
+  --ctp-surface1: rgba(255, 255, 255, 0.14);  /* border — active   */
+  --ctp-surface0: rgba(255, 255, 255, 0.10);  /* border — default  */
+
+  /* Backgrounds */
+  --ctp-base:   #000000;
+  --ctp-mantle: rgba(255, 255, 255, 0.07);  /* glass card fill   */
+  --ctp-crust:  rgba(0,   0,   0,   0.55);  /* glass nav fill    */
 }
 
-/* Catppuccin Latte palette (light) */
+/* iOS System palette — light mode */
 [data-theme="light"] {
-  --ctp-rosewater: #dc8a78;
-  --ctp-flamingo: #dd7878;
-  --ctp-pink: #ea76cb;
-  --ctp-mauve: #8839ef;
-  --ctp-red: #d20f39;
-  --ctp-maroon: #e64553;
-  --ctp-peach: #fe640b;
-  --ctp-yellow: #df8e1d;
-  --ctp-green: #40a02b;
-  --ctp-teal: #179299;
-  --ctp-sky: #04a5e5;
-  --ctp-sapphire: #209fb5;
-  --ctp-blue: #1e66f5;
-  --ctp-lavender: #7287fd;
-  --ctp-text: #4c4f69;
-  --ctp-subtext1: #5c5f77;
-  --ctp-subtext0: #6c6f85;
-  --ctp-overlay2: #7c7f93;
-  --ctp-overlay1: #8c8fa1;
-  --ctp-overlay0: #9ca0b0;
-  --ctp-surface2: #acb0be;
-  --ctp-surface1: #bcc0cc;
-  --ctp-surface0: #ccd0da;
-  --ctp-base: #eff1f5;
-  --ctp-mantle: #e6e9ef;
-  --ctp-crust: #dce0e8;
+  /* Accent / brand */
+  --ctp-rosewater: #FF2D55;
+  --ctp-flamingo:  #FF6B6B;
+  --ctp-pink:      #FF2D55;
+  --ctp-mauve:     #AF52DE;   /* iOS Purple  — light mode      */
+  --ctp-red:       #FF3B30;
+  --ctp-maroon:    #FF6961;
+  --ctp-peach:     #FF9500;
+  --ctp-yellow:    #FFCC00;
+  --ctp-green:     #34C759;
+  --ctp-teal:      #5AC8FA;
+  --ctp-sky:       #5AC8FA;
+  --ctp-sapphire:  #32ADE6;
+  --ctp-blue:      #007AFF;
+  --ctp-lavender:  #5856D6;
+
+  /* Labels */
+  --ctp-text:     #000000;
+  --ctp-subtext1: rgba(60, 60, 67, 0.80);
+  --ctp-subtext0: rgba(60, 60, 67, 0.55);
+  --ctp-overlay2: rgba(60, 60, 67, 0.68);
+  --ctp-overlay1: rgba(60, 60, 67, 0.48);
+  --ctp-overlay0: rgba(60, 60, 67, 0.28);
+
+  /* Glass fills / borders */
+  --ctp-surface2: rgba(60, 60, 67, 0.28);
+  --ctp-surface1: rgba(60, 60, 67, 0.18);
+  --ctp-surface0: rgba(60, 60, 67, 0.10);
+
+  /* Backgrounds */
+  --ctp-base:   #F2F2F7;
+  --ctp-mantle: rgba(255, 255, 255, 0.65);
+  --ctp-crust:  rgba(242, 242, 247, 0.80);
 }
 
 @theme inline {
   --color-ctp-rosewater: var(--ctp-rosewater);
-  --color-ctp-flamingo: var(--ctp-flamingo);
-  --color-ctp-pink: var(--ctp-pink);
-  --color-ctp-mauve: var(--ctp-mauve);
-  --color-ctp-red: var(--ctp-red);
-  --color-ctp-maroon: var(--ctp-maroon);
-  --color-ctp-peach: var(--ctp-peach);
-  --color-ctp-yellow: var(--ctp-yellow);
-  --color-ctp-green: var(--ctp-green);
-  --color-ctp-teal: var(--ctp-teal);
-  --color-ctp-sky: var(--ctp-sky);
-  --color-ctp-sapphire: var(--ctp-sapphire);
-  --color-ctp-blue: var(--ctp-blue);
-  --color-ctp-lavender: var(--ctp-lavender);
-  --color-ctp-text: var(--ctp-text);
-  --color-ctp-subtext1: var(--ctp-subtext1);
-  --color-ctp-subtext0: var(--ctp-subtext0);
-  --color-ctp-overlay2: var(--ctp-overlay2);
-  --color-ctp-overlay1: var(--ctp-overlay1);
-  --color-ctp-overlay0: var(--ctp-overlay0);
-  --color-ctp-surface2: var(--ctp-surface2);
-  --color-ctp-surface1: var(--ctp-surface1);
-  --color-ctp-surface0: var(--ctp-surface0);
-  --color-ctp-base: var(--ctp-base);
-  --color-ctp-mantle: var(--ctp-mantle);
-  --color-ctp-crust: var(--ctp-crust);
+  --color-ctp-flamingo:  var(--ctp-flamingo);
+  --color-ctp-pink:      var(--ctp-pink);
+  --color-ctp-mauve:     var(--ctp-mauve);
+  --color-ctp-red:       var(--ctp-red);
+  --color-ctp-maroon:    var(--ctp-maroon);
+  --color-ctp-peach:     var(--ctp-peach);
+  --color-ctp-yellow:    var(--ctp-yellow);
+  --color-ctp-green:     var(--ctp-green);
+  --color-ctp-teal:      var(--ctp-teal);
+  --color-ctp-sky:       var(--ctp-sky);
+  --color-ctp-sapphire:  var(--ctp-sapphire);
+  --color-ctp-blue:      var(--ctp-blue);
+  --color-ctp-lavender:  var(--ctp-lavender);
+  --color-ctp-text:      var(--ctp-text);
+  --color-ctp-subtext1:  var(--ctp-subtext1);
+  --color-ctp-subtext0:  var(--ctp-subtext0);
+  --color-ctp-overlay2:  var(--ctp-overlay2);
+  --color-ctp-overlay1:  var(--ctp-overlay1);
+  --color-ctp-overlay0:  var(--ctp-overlay0);
+  --color-ctp-surface2:  var(--ctp-surface2);
+  --color-ctp-surface1:  var(--ctp-surface1);
+  --color-ctp-surface0:  var(--ctp-surface0);
+  --color-ctp-base:      var(--ctp-base);
+  --color-ctp-mantle:    var(--ctp-mantle);
+  --color-ctp-crust:     var(--ctp-crust);
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
 }
 
+/* ─── Base styles ──────────────────────────────────────────────────────── */
+
 body {
-  background: var(--ctp-base);
+  /* Atmospheric gradient orbs — the backdrop glass blurs against */
+  background:
+    radial-gradient(ellipse at 85% 10%, rgba(191, 90, 242, 0.38) 0%, transparent 48%),
+    radial-gradient(ellipse at 12% 88%, rgba(10, 132, 255, 0.32) 0%, transparent 48%),
+    radial-gradient(ellipse at 50% 55%, rgba(94, 92, 230, 0.16) 0%, transparent 55%),
+    #000000;
+  background-attachment: fixed;
   color: var(--ctp-text);
   font-family: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
+[data-theme="light"] body {
+  background:
+    radial-gradient(ellipse at 85% 10%, rgba(175, 82, 222, 0.16) 0%, transparent 48%),
+    radial-gradient(ellipse at 12% 88%, rgba(0, 122, 255, 0.13) 0%, transparent 48%),
+    radial-gradient(ellipse at 50% 55%, rgba(88, 86, 214, 0.08) 0%, transparent 55%),
+    #F2F2F7;
+}
+
+/* Make page-content transparent so body orbs show through the glass panels */
 #page-content {
+  background: transparent;
   transition: filter 0.3s ease;
   scroll-behavior: smooth;
 }
@@ -113,4 +145,57 @@ body.mobile-menu-open #page-content {
 
 body.mobile-menu-open {
   overflow: hidden;
+}
+
+/* ─── iOS Frosted Glass utilities ──────────────────────────────────────── */
+
+/* Cards / panels */
+.glass-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+[data-theme="light"] .glass-card {
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.90);
+}
+
+/* Navigation bar */
+.glass-nav {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.glass-nav-scrolled {
+  background: rgba(0, 0, 0, 0.60);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .glass-nav {
+  background: rgba(242, 242, 247, 0.55);
+}
+
+[data-theme="light"] .glass-nav-scrolled {
+  background: rgba(242, 242, 247, 0.82);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile nav overlay */
+.glass-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+}
+
+[data-theme="light"] .glass-overlay {
+  background: rgba(242, 242, 247, 0.78);
 }

@@ -39,14 +39,14 @@ export function MobileNav() {
 
       {/* Mobile menu overlay */}
       {open && (
-        <div className="fixed inset-0 top-[57px] z-[60] bg-ctp-crust md:hidden">
+        <div className="glass-overlay fixed inset-0 top-[57px] z-[60] md:hidden">
           <nav className="flex flex-col items-center gap-4 px-6 pt-12">
             {links.map(({ href, label }) => (
               <a
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="group w-full max-w-xs rounded-xl border border-transparent px-6 py-4 text-center font-mono text-2xl font-semibold text-ctp-subtext1 transition-all duration-200 hover:border-ctp-mauve/40 hover:bg-ctp-surface0 hover:text-ctp-mauve hover:shadow-[0_0_20px_rgba(203,166,247,0.15)] active:scale-95 active:bg-ctp-surface1 active:text-ctp-lavender"
+                className="group w-full max-w-xs rounded-xl border border-transparent px-6 py-4 text-center font-mono text-2xl font-semibold text-ctp-subtext1 transition-all duration-200 hover:border-ctp-surface1 hover:text-ctp-mauve hover:shadow-[0_0_20px_rgba(191,90,242,0.15)] active:scale-95 active:text-ctp-lavender"
               >
                 <span className="inline-block transition-transform duration-200 group-hover:scale-110">
                   {label}
@@ -59,7 +59,7 @@ export function MobileNav() {
             <a
               href="mailto:bmccueny@gmail.com"
               onClick={() => setOpen(false)}
-              className="mt-2 w-full max-w-xs rounded-xl bg-ctp-mauve px-6 py-4 text-center font-mono text-lg font-semibold tracking-wide text-ctp-crust transition-all duration-200 hover:bg-ctp-lavender hover:shadow-[0_0_24px_rgba(203,166,247,0.3)] active:scale-95 active:bg-ctp-blue"
+              className="mt-2 w-full max-w-xs rounded-xl bg-ctp-mauve px-6 py-4 text-center font-mono text-lg font-semibold tracking-wide text-white transition-all duration-200 hover:bg-ctp-lavender hover:shadow-[0_0_24px_rgba(191,90,242,0.35)] active:scale-95 active:bg-ctp-blue"
             >
               Say Hello
             </a>

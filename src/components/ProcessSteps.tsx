@@ -56,7 +56,7 @@ export function ProcessSteps() {
       {steps.map((step, i) => (
         <div
           key={step.number}
-          className="rounded-xl border border-ctp-surface0 bg-ctp-mantle p-5 sm:p-6"
+          className="glass-card rounded-xl border border-ctp-surface0 p-5 sm:p-6"
           style={{
             opacity: revealed ? 1 : 0,
             transform: revealed ? "translateY(0)" : "translateY(30px)",

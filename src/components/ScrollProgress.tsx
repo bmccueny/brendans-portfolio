@@ -52,7 +52,7 @@ export function ScrollProgress() {
                 ? "var(--ctp-mauve)"
                 : "var(--ctp-surface1)",
               boxShadow: i === activeIndex
-                ? "0 0 8px rgba(203, 166, 247, 0.5)"
+                ? "0 0 8px rgba(191, 90, 242, 0.55)"
                 : "none",
             }}
           />

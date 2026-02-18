@@ -31,11 +31,11 @@ export function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative grid min-h-dvh snap-center place-items-center px-4 sm:px-6">
+    <section id="hero" className="relative grid min-h-dvh place-items-center px-4 sm:px-6">
       <div className="max-w-3xl text-center">
         {/* Status badge */}
         <div
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-ctp-surface0 bg-ctp-mantle px-4 py-1.5"
+          className="glass-card mb-6 inline-flex items-center gap-2 rounded-full border border-ctp-surface0 px-4 py-1.5"
           style={{
             opacity: past("badge") ? 1 : 0,
             transform: past("badge") ? "translateY(0)" : "translateY(-12px)",
@@ -77,13 +77,13 @@ export function HeroSection() {
         >
           <MagneticButton
             href="#projects"
-            className="inline-flex w-full items-center justify-center rounded-lg bg-ctp-mauve px-6 py-3 font-mono text-base font-semibold tracking-wide text-ctp-crust transition-colors hover:bg-ctp-lavender hover:shadow-[0_0_20px_rgba(180,190,254,0.4)] active:bg-ctp-blue sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-lg bg-ctp-mauve px-6 py-3 font-mono text-base font-semibold tracking-wide text-ctp-crust transition-colors hover:bg-ctp-lavender hover:shadow-[0_0_20px_rgba(191,90,242,0.45)] active:bg-ctp-blue sm:w-auto"
           >
             View Projects
           </MagneticButton>
           <MagneticButton
             href="#contact"
-            className="inline-flex w-full items-center justify-center rounded-lg border border-ctp-surface1 px-6 py-3 font-mono text-base font-semibold tracking-wide text-ctp-subtext1 transition-colors hover:border-ctp-mauve hover:text-ctp-mauve hover:shadow-[0_0_16px_rgba(203,166,247,0.2)] sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-lg border border-ctp-surface1 px-6 py-3 font-mono text-base font-semibold tracking-wide text-ctp-subtext1 transition-colors hover:border-ctp-mauve hover:text-ctp-mauve hover:shadow-[0_0_16px_rgba(191,90,242,0.2)] sm:w-auto"
           >
             Get in Touch
           </MagneticButton>

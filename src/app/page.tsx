@@ -37,12 +37,12 @@ export default function Home() {
       <Header />
       <ScrollProgress />
 
-      <div id="page-content" className="min-h-screen snap-y snap-proximity overflow-y-auto bg-ctp-base text-ctp-text" style={{ height: "100dvh" }}>
+      <div id="page-content" className="min-h-screen overflow-y-auto text-ctp-text" style={{ height: "100dvh" }}>
         {/* Hero */}
         <HeroSection />
 
         {/* About */}
-        <section id="about" className="snap-center border-t border-ctp-surface0">
+        <section id="about" className="border-t border-ctp-surface0">
           <div className="grid min-h-dvh place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
             <div className="max-w-3xl text-center">
               <RevealOnScroll>
@@ -66,7 +66,7 @@ export default function Home() {
         </section>
 
         {/* Process */}
-        <section id="process" className="snap-start md:snap-center border-t border-ctp-surface0">
+        <section id="process" className="border-t border-ctp-surface0">
           <div className="grid min-h-dvh place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
             <div className="w-full max-w-4xl">
               <RevealOnScroll>
@@ -80,7 +80,7 @@ export default function Home() {
         </section>
 
         {/* Projects */}
-        <section id="projects" className="snap-start md:snap-center border-t border-ctp-surface0">
+        <section id="projects" className="border-t border-ctp-surface0">
           <div className="grid min-h-dvh place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
             <div className="w-full max-w-5xl">
               <RevealOnScroll>
@@ -98,7 +98,7 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="snap-center border-t border-ctp-surface0">
+        <section id="contact" className="border-t border-ctp-surface0">
           <div className="grid min-h-dvh place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
             <div className="max-w-xl text-center">
               <CollideHeading />
@@ -112,7 +112,7 @@ export default function Home() {
               <RevealOnScroll delay={300}>
                 <a
                   href="mailto:bmccueny@gmail.com"
-                  className="inline-block rounded-lg bg-ctp-mauve px-5 py-2.5 font-mono text-base font-semibold tracking-wide text-ctp-crust transition-colors hover:bg-ctp-lavender hover:shadow-[0_0_20px_rgba(180,190,254,0.4)] active:bg-ctp-blue sm:px-6 sm:py-3"
+                  className="inline-block rounded-lg bg-ctp-mauve px-5 py-2.5 font-mono text-base font-semibold tracking-wide text-white transition-colors hover:bg-ctp-lavender hover:shadow-[0_0_20px_rgba(191,90,242,0.45)] active:bg-ctp-blue sm:px-6 sm:py-3"
                 >
                   Get in Touch
                 </a>

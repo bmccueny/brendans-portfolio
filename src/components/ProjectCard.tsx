@@ -62,7 +62,7 @@ export function ProjectCard({ title, description, href, index, image }: ProjectC
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="group flex min-h-[120px] flex-col overflow-hidden rounded-xl border border-ctp-surface0 bg-ctp-mantle hover:border-ctp-surface2 hover:bg-ctp-surface0 active:bg-ctp-surface1"
+      className="glass-card group flex min-h-[120px] flex-col overflow-hidden rounded-xl border border-ctp-surface0 hover:border-ctp-surface2"
       style={{
         opacity: revealed ? 1 : 0,
         transform: revealed

@@ -21,10 +21,10 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 border-b transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 border-b transition-all duration-500 ${
         scrolled
-          ? "border-ctp-surface0 bg-ctp-crust/95 backdrop-blur-lg"
-          : "border-transparent bg-ctp-crust/50 backdrop-blur-sm"
+          ? "border-ctp-surface0 glass-nav-scrolled"
+          : "border-transparent glass-nav"
       }`}
     >
       <nav className="mx-auto grid max-w-5xl grid-cols-[1fr_auto] items-center px-4 py-4 sm:px-6">
