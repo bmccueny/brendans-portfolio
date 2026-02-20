@@ -46,7 +46,7 @@ export function HeroSection() {
 
         {/* Eyebrow */}
         <p
-          className="mb-3 font-mono text-base font-medium sm:text-lg"
+          className="mb-3 font-sans text-xs font-semibold uppercase tracking-widest"
           style={{
             opacity: past("heading") ? 1 : 0,
             transform: past("heading") ? "translateY(0)" : "translateY(10px)",
@@ -60,15 +60,16 @@ export function HeroSection() {
 
         {/* Main headline */}
         <h1
-          className="font-mono text-4xl font-extrabold leading-tight tracking-normal text-ctp-text sm:text-5xl md:text-6xl"
+          className="font-sans text-4xl font-extrabold leading-tight tracking-tight text-ctp-text sm:text-5xl md:text-6xl"
           style={{
             opacity: past("heading") ? 1 : 0,
             transform: past("heading") ? "translateY(0)" : "translateY(18px)",
             transition: "opacity 0.6s ease-out 0.07s, transform 0.6s ease-out 0.07s",
           }}
         >
-          I Build Websites{" "}
-          <span style={{ color: "var(--ctp-mauve)" }}>That Work.</span>
+          Websites That{" "}
+          <span style={{ color: "var(--ctp-mauve)" }}>Win Clients</span>{" "}
+          for Small Businesses.
         </h1>
 
         {/* Body */}
@@ -80,10 +81,9 @@ export function HeroSection() {
             transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
           }}
         >
-          I build websites that look professional, load fast, and work on
-          every device. Whether you&apos;re launching your first site or
-          upgrading one that&apos;s holding you back—I make the whole process
-          easy so you can focus on what you do best.
+          Coffee shops, salons, landscapers, coaches — I build fast,
+          professional sites that make real people reach out and book.
+          Starting at $1,500. Delivered in under two weeks. No tech jargon, ever.
         </p>
 
         {/* CTA buttons */}
@@ -97,16 +97,51 @@ export function HeroSection() {
         >
           <MagneticButton
             href="#projects"
-            className="inline-flex w-full items-center justify-center rounded-lg bg-ctp-mauve px-6 py-3 font-mono text-base font-semibold tracking-wide text-white transition-colors hover:bg-ctp-lavender hover:shadow-[0_0_20px_rgba(191,90,242,0.45)] active:bg-ctp-blue sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-lg bg-ctp-mauve px-6 py-3 font-sans text-base font-semibold tracking-wide text-white transition-colors hover:bg-ctp-lavender hover:shadow-[0_0_20px_rgba(191,90,242,0.45)] active:bg-ctp-blue sm:w-auto"
           >
             View Projects
           </MagneticButton>
           <MagneticButton
             href="#contact"
-            className="inline-flex w-full items-center justify-center rounded-lg border border-ctp-surface1 px-6 py-3 font-mono text-base font-semibold tracking-wide text-ctp-subtext1 transition-colors hover:border-ctp-mauve hover:text-ctp-mauve hover:shadow-[0_0_16px_rgba(191,90,242,0.2)] sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-lg border border-ctp-surface1 px-6 py-3 font-sans text-base font-semibold tracking-wide text-ctp-subtext1 transition-colors hover:border-ctp-mauve hover:text-ctp-mauve hover:shadow-[0_0_16px_rgba(191,90,242,0.2)] sm:w-auto"
           >
             Get in Touch
           </MagneticButton>
+        </div>
+
+        {/* Project preview strip */}
+        <div
+          className="mt-12 flex items-end justify-center gap-3 sm:gap-4"
+          style={{
+            opacity: past("ctas") ? 1 : 0,
+            transform: past("ctas") ? "translateY(0)" : "translateY(24px)",
+            transition: "opacity 0.7s ease-out 0.15s, transform 0.7s ease-out 0.15s",
+          }}
+        >
+          {[
+            { src: "/projects/staten-island-grinding-service.png", alt: "SI Grinding Service", rotate: "-rotate-2", scale: "scale-95" },
+            { src: "/projects/ember-and-brew.png",                 alt: "Ember & Brew",        rotate: "rotate-0",  scale: "scale-100" },
+            { src: "/projects/velvet-edge.png",                    alt: "Velvet Edge",         rotate: "rotate-2",  scale: "scale-95" },
+          ].map((p) => (
+            <div
+              key={p.alt}
+              className={`${p.rotate} ${p.scale} overflow-hidden rounded-lg border border-ctp-surface0 shadow-[0_8px_32px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:scale-100 hover:rotate-0`}
+              style={{ width: "clamp(80px, 22vw, 180px)" }}
+            >
+              {/* Browser chrome strip */}
+              <div className="flex items-center gap-1 border-b border-ctp-surface0 bg-ctp-mantle px-2 py-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-ctp-red opacity-70" />
+                <span className="h-1.5 w-1.5 rounded-full bg-ctp-peach opacity-70" />
+                <span className="h-1.5 w-1.5 rounded-full bg-ctp-green opacity-70" />
+              </div>
+              <img
+                src={p.src}
+                alt={p.alt}
+                className="block w-full object-cover object-top"
+                style={{ aspectRatio: "4/3" }}
+              />
+            </div>
+          ))}
         </div>
 
       </div>

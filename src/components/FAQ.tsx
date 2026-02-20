@@ -5,24 +5,24 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 const faqs = [
   {
-    q: "How long does a website take to build?",
-    a: "Most small business sites are live in 2–4 weeks. I'll give you a clear timeline before any work begins, so you know exactly what to expect.",
+    q: "Do you build portfolio and gallery sites?",
+    a: "Yes — galleries and portfolio pages are some of my favorite work. Whether you're a photographer, artist, or wedding vendor, I'll make sure your images and work are front and center and load beautifully on every device.",
+  },
+  {
+    q: "Can you add a booking or inquiry form?",
+    a: "Absolutely. Most of my clients need a way for people to reach out or request a session, quote, or appointment. I build clean, reliable inquiry forms that land straight in your inbox.",
+  },
+  {
+    q: "I'm not technical at all — is that okay?",
+    a: "That's exactly who I build for. I handle everything and explain it all in plain English. By the end, you'll know how to manage your own site without needing to call anyone.",
   },
   {
     q: "What do I need to have ready before we start?",
-    a: "Just a general idea of what you want. I'll help with structure, copy direction, and design. If you have a logo and photos, great — but they're not required to get started.",
-  },
-  {
-    q: "Do you handle hosting and domain setup?",
-    a: "Yes. I'll set everything up and walk you through it so you're not left figuring things out on your own after launch.",
-  },
-  {
-    q: "What happens if I need changes after the site goes live?",
-    a: "Minor tweaks in the first 30 days are included. For ongoing updates or new features down the road, I offer simple support arrangements — nothing locked into a long contract.",
+    a: "Just a general sense of what you want. I'll help with structure and direction. If you have photos, a logo, or writing — great. If not, we'll figure it out together.",
   },
   {
     q: "Do you work with clients outside the Hudson Valley?",
-    a: "Absolutely. I work fully remote and have no problem collaborating with clients anywhere. Most of the process happens over email and video calls anyway.",
+    a: "Yes. I'm fully remote and work with clients anywhere. Most of the process happens over email and video calls, so location has never been an issue.",
   },
 ];
 
@@ -39,7 +39,7 @@ export function FAQ() {
               onClick={() => setOpen(open === i ? null : i)}
               className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
             >
-              <span className="font-mono text-sm font-semibold text-ctp-text sm:text-base">
+              <span className="font-sans text-sm font-semibold text-ctp-text sm:text-base">
                 {faq.q}
               </span>
               <svg

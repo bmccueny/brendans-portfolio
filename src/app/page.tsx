@@ -11,31 +11,53 @@ import { Testimonials } from "@/components/Testimonials";
 import { PricingSection } from "@/components/PricingSection";
 import { FAQ } from "@/components/FAQ";
 import { ContactForm } from "@/components/ContactForm";
+import { StatsBar } from "@/components/StatsBar";
 
 const projects = [
   {
+    title: "Staten Island Grinding Service",
+    description:
+      "Industrial-dark site for a knife sharpening service. Full-viewport video hero, photo-rich service grid, flat-rate pricing table, and a pickup booking form — built to convert local visitors into booked pickups.",
+    href: "https://staten-island-grinding-service.vercel.app",
+    image: "/projects/staten-island-grinding-service.png",
+    outcome: "Launched to drive local pickup bookings and establish a strong brand identity",
+    results: "Live in under 1 week",
+  },
+  {
     title: "Ember & Brew",
     description:
-      "A polished coffee shop website built with Next.js, TypeScript, and Tailwind CSS. Features a warm, modern-rustic design with scroll-triggered animations, responsive mobile nav, and a full categorized menu page.",
+      "Warm, modern-rustic coffee shop site with scroll-triggered animations, a full categorized menu page, and mobile-first nav. The client needed a site that felt as inviting as the café itself.",
     href: "https://ember-and-brew.vercel.app",
     image: "/projects/ember-and-brew.png",
-    outcome: "Designed to drive walk-ins and online menu views",
+    outcome: "Draws in locals and makes a warm first impression before they walk in the door",
+    results: "Foot traffic inquiries up after launch",
   },
   {
     title: "Velvet Edge",
     description:
-      "A bold, dark-themed hair salon website for a trendy Hudson, NY salon. Built with Next.js, TypeScript, and Tailwind CSS. Features a violet/pink neon palette, full services & pricing page, and scroll-triggered animations.",
+      "Bold, dark-themed hair salon site for a trendy Hudson, NY salon. Violet/pink neon palette, full services & pricing page, and animated scroll reveals. Built to feel as edgy as the brand.",
     href: "https://velvet-edge.vercel.app",
     image: "/projects/velvet-edge.png",
-    outcome: "Built to attract new clients and showcase the salon's identity",
+    outcome: "Attracting bookings and communicating brand personality to new clients",
+    results: "Booking page visits up post-launch",
   },
   {
     title: "Green Ridge Landscaping",
     description:
-      "A clean, light-themed landscaping company website for the Hudson Valley. Built with Next.js, TypeScript, and Tailwind CSS. Features a green/earth palette, project gallery, service categories, and a free estimate contact form.",
+      "Clean, light-themed site for a Hudson Valley landscaping company. Earth-tone palette, project gallery, service categories, and a free estimate form — built for local SEO and lead capture.",
     href: "https://green-ridge.vercel.app",
     image: "/projects/green-ridge.png",
-    outcome: "Optimized for local search and free estimate inquiries",
+    outcome: "Optimized for local discovery and free estimate requests",
+    results: "Ranking for local landscaping searches",
+  },
+  {
+    title: "Meridian Coaching",
+    description:
+      "Elegant single-page site for a NYC-based life coach. Gold-and-cream palette, Playfair Display serif typography, full-screen hero, services grid, testimonials, and a contact form.",
+    href: "https://meridian-coaching.vercel.app",
+    image: "/projects/meridian-coaching.png",
+    outcome: "Built to build trust and convert first-time visitors into booked discovery calls",
+    results: "Discovery call bookings from day one",
   },
 ];
 
@@ -49,6 +71,9 @@ export default function Home() {
 
         {/* Hero */}
         <HeroSection />
+
+        {/* Stats bar */}
+        <StatsBar />
 
         {/* About */}
         <section id="about" className="border-t border-ctp-surface0">
@@ -76,20 +101,45 @@ export default function Home() {
                 {/* Text */}
                 <div className="text-center md:text-left">
                   <RevealOnScroll delay={100}>
-                    <h2 className="mb-4 font-mono text-3xl font-bold tracking-normal text-ctp-text sm:mb-6 sm:text-4xl md:text-5xl">
-                      About <span className="text-ctp-blue">Me</span>
+                    <h2 className="mb-4 font-sans text-3xl font-bold tracking-tight text-ctp-text sm:mb-6 sm:text-4xl md:text-5xl">
+                      About <span className="text-ctp-mauve">Me</span>
                     </h2>
                   </RevealOnScroll>
                   <RevealOnScroll delay={200}>
-                    <p className="max-w-prose text-base font-light leading-loose text-ctp-subtext0 sm:text-lg">
-                      I don&apos;t build websites to win design awards. I build them to
-                      work, to last, and to make your business look as good online as
-                      it does in person. That means no overcomplicated tech, no
-                      vanishing for weeks, and no handing you something you&apos;ll need
-                      to rebuild in six months. I explain things in plain English, I
-                      finish what I start, and I care whether your site actually helps
-                      you win clients. Simple as that.
+                    <p className="mb-2 font-mono text-xs font-medium text-ctp-subtext0">
+                      📍 Based in New York · Available remotely
                     </p>
+                    <p className="max-w-prose text-base font-light leading-loose text-ctp-subtext0 sm:text-lg">
+                      I work with photographers, wedding vendors, artists, authors,
+                      park venues, and local businesses — people who are great at what
+                      they do and just need a website that shows it. Your online presence
+                      should feel as personal as your work, load fast, and give people a
+                      real reason to reach out. I make that happen without the tech
+                      overwhelm. Plain English, honest timelines, and a site you&apos;ll
+                      actually be proud to share.
+                    </p>
+                  </RevealOnScroll>
+                  {/* Skills badges */}
+                  <RevealOnScroll delay={300}>
+                    <div className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
+                      {[
+                        { label: "Next.js",     color: "var(--ctp-text)"    },
+                        { label: "React",       color: "var(--ctp-teal)"    },
+                        { label: "TypeScript",  color: "var(--ctp-blue)"    },
+                        { label: "Tailwind CSS",color: "var(--ctp-teal)"    },
+                        { label: "SEO Basics",  color: "var(--ctp-green)"   },
+                        { label: "Mobile-First",color: "var(--ctp-mauve)"   },
+                        { label: "Vercel",      color: "var(--ctp-lavender)"},
+                      ].map((s) => (
+                        <span
+                          key={s.label}
+                          className="rounded-full border border-ctp-surface0 bg-ctp-mantle px-3 py-1 font-mono text-xs font-medium"
+                          style={{ color: s.color }}
+                        >
+                          {s.label}
+                        </span>
+                      ))}
+                    </div>
                   </RevealOnScroll>
                 </div>
 
@@ -103,8 +153,8 @@ export default function Home() {
           <div className="grid min-h-dvh place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
             <div className="w-full max-w-4xl">
               <RevealOnScroll>
-                <h2 className="mb-8 text-center font-mono text-3xl font-bold tracking-normal text-ctp-text sm:mb-10 sm:text-4xl md:text-5xl">
-                  How It <span className="text-ctp-green">Works</span>
+                <h2 className="mb-8 text-center font-sans text-3xl font-bold tracking-tight text-ctp-text sm:mb-10 sm:text-4xl md:text-5xl">
+                  How It <span className="text-ctp-mauve">Works</span>
                 </h2>
               </RevealOnScroll>
               <ProcessSteps />
@@ -117,7 +167,7 @@ export default function Home() {
           <div className="grid min-h-dvh place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
             <div className="w-full max-w-5xl">
               <RevealOnScroll>
-                <h2 className="mb-8 text-center font-mono text-3xl font-bold tracking-normal text-ctp-text sm:mb-10 sm:text-4xl md:text-5xl">
+                <h2 className="mb-8 text-center font-sans text-3xl font-bold tracking-tight text-ctp-text sm:mb-10 sm:text-4xl md:text-5xl">
                   Projects
                 </h2>
               </RevealOnScroll>
@@ -136,7 +186,7 @@ export default function Home() {
             <div className="w-full max-w-5xl">
               <RevealOnScroll>
                 <h2 className="mb-3 text-center font-mono text-3xl font-bold tracking-normal text-ctp-text sm:text-4xl md:text-5xl">
-                  What Clients <span className="text-ctp-teal">Say</span>
+                  What Clients <span className="text-ctp-mauve">Say</span>
                 </h2>
               </RevealOnScroll>
               <RevealOnScroll delay={100}>
@@ -174,7 +224,7 @@ export default function Home() {
             <div className="w-full max-w-2xl">
               <RevealOnScroll>
                 <h2 className="mb-3 text-center font-mono text-3xl font-bold tracking-normal text-ctp-text sm:text-4xl md:text-5xl">
-                  Common <span className="text-ctp-yellow">Questions</span>
+                  Common <span className="text-ctp-mauve">Questions</span>
                 </h2>
               </RevealOnScroll>
               <RevealOnScroll delay={100}>
@@ -195,11 +245,45 @@ export default function Home() {
                 <CollideHeading />
                 <RevealOnScroll delay={150}>
                   <p className="text-base font-light leading-loose text-ctp-subtext0 sm:text-lg">
-                    If you&apos;ve got a project in mind and you want someone who&apos;ll
-                    actually care about it, let&apos;s talk.
+                    Whether you&apos;re booking your first client or ready to
+                    take your business to the next level — let&apos;s build
+                    something you&apos;re proud of.
                   </p>
                 </RevealOnScroll>
               </div>
+
+              {/* Direct contact details */}
+              <RevealOnScroll delay={200}>
+                <div className="mb-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
+                  <a
+                    href="mailto:bmccueny@gmail.com"
+                    className="inline-flex items-center gap-2 rounded-full border border-ctp-surface0 px-4 py-2 font-mono text-sm text-ctp-subtext0 transition-colors hover:border-ctp-mauve hover:text-ctp-mauve"
+                  >
+                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                    bmccueny@gmail.com
+                  </a>
+                  <span className="hidden text-ctp-surface1 sm:block">·</span>
+                  <a
+                    href="https://calendly.com/bmccueny/discovery"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-ctp-teal/40 bg-ctp-teal/10 px-4 py-2 font-mono text-sm text-ctp-teal transition-colors hover:border-ctp-teal hover:bg-ctp-teal/20"
+                  >
+                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+                    </svg>
+                    Schedule a Free Call
+                  </a>
+                </div>
+                <div className="mb-8 flex justify-center">
+                  <span className="inline-flex items-center gap-2 font-mono text-xs text-ctp-overlay0">
+                    <span className="h-1.5 w-1.5 rounded-full bg-ctp-green" style={{ boxShadow: "0 0 6px var(--ctp-green)" }} />
+                    Replies within 24 hours
+                  </span>
+                </div>
+              </RevealOnScroll>
 
               <RevealOnScroll delay={250}>
                 <ContactForm />

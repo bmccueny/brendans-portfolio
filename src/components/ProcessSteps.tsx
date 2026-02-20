@@ -66,7 +66,7 @@ export function ProcessSteps() {
           <span className="font-mono text-2xl font-extrabold text-ctp-mauve sm:text-3xl">
             {step.number}
           </span>
-          <h3 className="mt-2 font-mono text-lg font-bold tracking-normal text-ctp-text sm:text-xl">
+          <h3 className="mt-2 font-sans text-lg font-bold tracking-tight text-ctp-text sm:text-xl">
             {step.title}
           </h3>
           <p className="mt-2 text-sm font-light leading-relaxed text-ctp-subtext0 sm:text-base">

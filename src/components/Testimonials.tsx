@@ -5,27 +5,30 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 const testimonials = [
   {
     quote:
-      "Brendan handled everything. I gave him a rough idea of what I wanted and he came back with something better than I imagined. Our online menu has saved us so many phone calls.",
-    name: "Sarah M.",
-    role: "Owner, Ember & Brew",
-    initials: "SM",
-    color: "var(--ctp-peach)",
+      "I booked three weddings within two months of my new site going live. Brides were telling me they felt confident before we even spoke. Brendan just gets what photographers need.",
+    name: "Rachel H.",
+    role: "Wedding & Portrait Photographer",
+    initials: "RH",
+    color: "var(--ctp-pink)",
+    metric: "3 weddings booked in 2 months",
   },
   {
     quote:
-      "Our old site looked like it was built in 2012. Brendan gave us something we're actually proud to send clients to. He kept us in the loop the entire time — no surprises, no jargon.",
-    name: "Jamie L.",
-    role: "Owner, Velvet Edge",
-    initials: "JL",
+      "I needed somewhere to sell my book, share my story, and grow my newsletter. Brendan built exactly that — and made it simple enough that I actually manage it myself.",
+    name: "Daniel K.",
+    role: "Author",
+    initials: "DK",
     color: "var(--ctp-mauve)",
+    metric: "Launched & self-managing in under 2 weeks",
   },
   {
     quote:
-      "I was getting zero leads from my old website. Within a month of launching the new one, inquiry forms were coming in every week. Straightforward guy, great results.",
-    name: "Tom G.",
-    role: "Owner, Green Ridge Landscaping",
-    initials: "TG",
+      "My old site didn't reflect us at all. The new one does — it feels like us. Our online inquiries have more than doubled and people actually stay on the page now.",
+    name: "Maya T.",
+    role: "Owner, Bloom & Co.",
+    initials: "MT",
     color: "var(--ctp-green)",
+    metric: "2× more online inquiries",
   },
 ];
 
@@ -35,10 +38,25 @@ export function Testimonials() {
       {testimonials.map((t, i) => (
         <RevealOnScroll key={t.name} delay={i * 120}>
           <div className="glass-card flex h-full flex-col rounded-xl border border-ctp-surface0 p-6">
+            {/* Metric badge */}
+            <div
+              className="mb-4 inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs font-semibold"
+              style={{
+                color: t.color,
+                backgroundColor: `color-mix(in srgb, ${t.color} 12%, transparent)`,
+                border: `1px solid color-mix(in srgb, ${t.color} 30%, transparent)`,
+              }}
+            >
+              <svg className="h-3 w-3" viewBox="0 0 12 12" fill="none">
+                <path d="M2 9l3-3 2 2 3-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              {t.metric}
+            </div>
+
             {/* Quote mark */}
             <span
-              className="mb-3 font-mono text-4xl font-extrabold leading-none"
-              style={{ color: t.color, opacity: 0.5 }}
+              className="mb-2 font-mono text-4xl font-extrabold leading-none"
+              style={{ color: t.color, opacity: 0.4 }}
               aria-hidden="true"
             >
               &ldquo;
@@ -49,7 +67,6 @@ export function Testimonials() {
             </p>
 
             <div className="mt-5 flex items-center gap-3 border-t border-ctp-surface0 pt-4">
-              {/* Initials avatar */}
               <div
                 className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full font-mono text-xs font-bold text-white"
                 style={{ background: t.color }}

@@ -119,7 +119,10 @@ export function ContactForm() {
           className="form-select w-full rounded-lg border border-ctp-surface0 px-4 py-3 text-sm transition-colors focus:border-ctp-mauve focus:outline-none"
         >
           <option value="" disabled>Select an option</option>
-          <option value="New website">New website</option>
+          <option value="Portfolio or gallery site">Portfolio or gallery site</option>
+          <option value="Wedding or engagement site">Wedding or engagement site</option>
+          <option value="Small business website">Small business website</option>
+          <option value="Author or artist site">Author or artist site</option>
           <option value="Redesign an existing site">Redesign an existing site</option>
           <option value="Something else">Something else</option>
         </select>
