@@ -17,7 +17,7 @@ export function Footer() {
               McCue Studio
             </p>
             <p className="mt-0.5 text-xs text-ctp-overlay0">
-              &copy; {new Date().getFullYear()} All rights reserved.
+              &copy; {new Date().getFullYear()} McCue Studios. All rights reserved. · Design & Development by McCue Studios
             </p>
           </div>
 

@@ -15,6 +15,24 @@ import { StatsBar } from "@/components/StatsBar";
 
 const projects = [
   {
+    title: "Staten Island Greenbelt",
+    description:
+      "Informational site for NYC's largest park preserve. Features a history timeline, trail guides, events calendar, nature blog, and visitor info — built to connect Staten Islanders with their urban wilderness.",
+    href: "https://staten-island-greenbelt.vercel.app",
+    image: "/projects/staten-island-greenbelt.jpg",
+    outcome: "A rich, editorial destination site for one of NYC's most underappreciated natural treasures",
+    results: "11 pages, 6 trails, 8 events, 11 blog posts at launch",
+  },
+  {
+    title: "Lyra Ashborne",
+    description:
+      "Fantasy romance author site with a dark violet aesthetic, MDX-powered blog, book series showcase, newsletter signup, and animated hero. Built to grow Lyra's readership and sell her books directly.",
+    href: "https://lyra-ashborne.vercel.app",
+    image: "/projects/lyra-ashborne.jpg",
+    outcome: "Launches Lyra's author brand with a site as enchanting as her stories",
+    results: "Deployed with 6 live blog posts",
+  },
+  {
     title: "Staten Island Grinding Service",
     description:
       "Industrial-dark site for a knife sharpening service. Full-viewport video hero, photo-rich service grid, flat-rate pricing table, and a pickup booking form — built to convert local visitors into booked pickups.",
@@ -49,15 +67,6 @@ const projects = [
     image: "/projects/green-ridge.png",
     outcome: "Optimized for local discovery and free estimate requests",
     results: "Ranking for local landscaping searches",
-  },
-  {
-    title: "Meridian Coaching",
-    description:
-      "Elegant single-page site for a NYC-based life coach. Gold-and-cream palette, Playfair Display serif typography, full-screen hero, services grid, testimonials, and a contact form.",
-    href: "https://meridian-coaching.vercel.app",
-    image: "/projects/meridian-coaching.png",
-    outcome: "Built to build trust and convert first-time visitors into booked discovery calls",
-    results: "Discovery call bookings from day one",
   },
 ];
 
@@ -202,7 +211,7 @@ export default function Home() {
         {/* Pricing */}
         <section id="pricing" className="border-t border-ctp-surface0">
           <div className="grid min-h-dvh place-items-center px-4 py-16 sm:px-6 sm:py-20 md:py-24">
-            <div className="w-full max-w-5xl">
+            <div className="w-full max-w-5xl overflow-hidden">
               <RevealOnScroll>
                 <h2 className="mb-3 text-center font-mono text-3xl font-bold tracking-normal text-ctp-text sm:text-4xl md:text-5xl">
                   Pricing
