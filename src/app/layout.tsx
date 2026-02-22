@@ -104,7 +104,7 @@ export default function RootLayout({
       <body className="antialiased">
         {children}
         <Footer />
-        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+        <GoogleAnalytics gaId="G-EWCR9PK915" />
       </body>
     </html>
   );
