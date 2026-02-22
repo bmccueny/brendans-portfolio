@@ -12,11 +12,32 @@ export const metadata: Metadata = {
   title: "McCue Studio – Web Development for Small Businesses",
   description:
     "McCue Studio builds fast, professional websites for small businesses. Plain English, honest pricing, and work that actually helps you win clients.",
+  metadataBase: new URL("https://mccuestudio.dev"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "McCue Studio – Web Development for Small Businesses",
     description:
       "McCue Studio builds fast, professional websites for small businesses. Plain English, honest pricing, and work that actually helps you win clients.",
     type: "website",
+    url: "https://mccuestudio.dev",
+    siteName: "McCue Studio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "McCue Studio – Web Development for Small Businesses",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "McCue Studio – Web Development for Small Businesses",
+    description:
+      "McCue Studio builds fast, professional websites for small businesses. Plain English, honest pricing, and work that actually helps you win clients.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -24,12 +45,24 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Person",
+      name: "Brendan McCue",
+      url: "https://mccuestudio.dev",
+      jobTitle: "Web Developer",
+      worksFor: { "@type": "Organization", name: "McCue Studio" },
+      sameAs: [
+        "https://github.com/bmccueny",
+        "https://linkedin.com/in/bmccueny",
+      ],
+    },
+    {
       "@type": "LocalBusiness",
       name: "McCue Studio",
       description:
         "McCue Studio builds fast, professional websites for small businesses. Plain English, honest pricing, and work that actually helps you win clients.",
       url: "https://mccuestudio.dev",
       email: "bmccueny@gmail.com",
+      image: "https://mccuestudio.dev/og-image.png",
       address: {
         "@type": "PostalAddress",
         addressLocality: "New York",

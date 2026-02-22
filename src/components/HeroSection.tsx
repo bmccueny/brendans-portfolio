@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { PulsingDot } from "@/components/PulsingDot";
 import { MagneticButton } from "@/components/MagneticButton";
 import { ScrollIndicator } from "@/components/ScrollIndicator";
@@ -134,11 +135,12 @@ export function HeroSection() {
                 <span className="h-1.5 w-1.5 rounded-full bg-ctp-peach opacity-70" />
                 <span className="h-1.5 w-1.5 rounded-full bg-ctp-green opacity-70" />
               </div>
-              <img
+              <Image
                 src={p.src}
                 alt={p.alt}
+                width={360}
+                height={270}
                 className="block w-full object-cover object-top"
-                style={{ aspectRatio: "4/3" }}
               />
             </div>
           ))}
