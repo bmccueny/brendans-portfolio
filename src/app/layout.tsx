@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { AnalyticsDebugPanel } from "@/components/AnalyticsDebugPanel";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -9,35 +10,43 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "McCue Studio – Web Development for Small Businesses",
+  title: "McCue Studio | Conversion-Focused Websites for Small Businesses",
   description:
-    "McCue Studio builds fast, professional websites for small businesses. Plain English, honest pricing, and work that actually helps you win clients.",
+    "Conversion-focused websites for small businesses. Fast launch, clear messaging, and practical execution that turns traffic into qualified leads.",
   metadataBase: new URL("https://mccuestudio.dev"),
   alternates: {
     canonical: "/",
   },
+  keywords: [
+    "small business web design",
+    "next.js developer",
+    "conversion focused website",
+    "web developer new york",
+    "freelance web designer",
+  ],
+  authors: [{ name: "Brendan McCue", url: "https://mccuestudio.dev" }],
   openGraph: {
-    title: "McCue Studio – Web Development for Small Businesses",
+    title: "McCue Studio | Conversion-Focused Websites for Small Businesses",
     description:
-      "McCue Studio builds fast, professional websites for small businesses. Plain English, honest pricing, and work that actually helps you win clients.",
+      "Fast, conversion-focused websites for small businesses. Strategy, design, and frontend execution built for measurable inquiry growth.",
     type: "website",
     url: "https://mccuestudio.dev",
     siteName: "McCue Studio",
     images: [
       {
-        url: "/og-image.png",
+        url: "/api/og",
         width: 1200,
         height: 630,
-        alt: "McCue Studio – Web Development for Small Businesses",
+        alt: "McCue Studio | Conversion-Focused Websites for Small Businesses",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "McCue Studio – Web Development for Small Businesses",
+    title: "McCue Studio | Conversion-Focused Websites for Small Businesses",
     description:
-      "McCue Studio builds fast, professional websites for small businesses. Plain English, honest pricing, and work that actually helps you win clients.",
-    images: ["/og-image.png"],
+      "Conversion-focused websites for small businesses. Fast launch, clear messaging, and practical execution that turns traffic into qualified leads.",
+    images: ["/api/og"],
   },
 };
 
@@ -59,10 +68,10 @@ const jsonLd = {
       "@type": "LocalBusiness",
       name: "McCue Studio",
       description:
-        "McCue Studio builds fast, professional websites for small businesses. Plain English, honest pricing, and work that actually helps you win clients.",
+        "Conversion-focused websites for small businesses. Fast launch, clear messaging, and practical execution that turns traffic into qualified leads.",
       url: "https://mccuestudio.dev",
       email: "bmccueny@gmail.com",
-      image: "https://mccuestudio.dev/og-image.png",
+      image: "https://mccuestudio.dev/api/og",
       address: {
         "@type": "PostalAddress",
         addressLocality: "New York",
@@ -126,7 +135,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t}else if(window.matchMedia("(prefers-color-scheme: light)").matches){document.documentElement.dataset.theme="light"}}catch(e){}})()`,
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t}else{document.documentElement.dataset.theme="light"}}catch(e){}})()`,
           }}
         />
         <script
@@ -136,6 +145,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         {children}
+        <AnalyticsDebugPanel />
         <Footer />
         <GoogleAnalytics gaId="G-EWCR9PK915" />
       </body>
